@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState,useMemo } from 'react';
 import axios from 'axios';
 import { Input, ButtonComponent, TableComponent } from '../Utilities';
 import { Spinner } from 'react-bootstrap';
@@ -16,7 +16,7 @@ interface PageProps{
 }
 
 const FormCheckBank : React.FC<PageProps> = ({ bankList }) => {
-    const [bank, setBank] = useState(bankList || []);
+    const bank = useMemo(() => bankList || [], [bankList]);
     const [accountBank, setAccountBank] = useState("");
     const [accountNumber, setAccountNumber] = useState("");
     const [result, setResult] = useState("");

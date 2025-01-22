@@ -9,10 +9,9 @@ interface ComponentProps{
 }
 
 const TableComponent:React.FC<ComponentProps>  = ({ result, jenis }) => {
-    // console.log(result);
     if (result) {
-        let hasil = JSON.parse(result);
-        let status = hasil.success
+        const hasil = JSON.parse(result);
+        const status = hasil.success
         return (
             <>
                 <Container fluid>
